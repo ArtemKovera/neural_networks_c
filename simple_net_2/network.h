@@ -14,7 +14,7 @@ typedef struct
     
 }Layer;
 
-//function to initialize weights and biases
+//function to initialize weights and biases and allocating memory for weights, biases, and outputs of a single layer
 void initialize(Layer * layer, int numInputs, int numNeurons);
 
 //compute the output of a layer
