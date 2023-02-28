@@ -4,7 +4,7 @@
 #include<math.h>
 
 
-#define sigmoid(x) = 1 / (1 + exp(-x))
+#define sigmoid(x) = 1 / (1 + exp(-1 * (x)))
 
 typedef struct
 {

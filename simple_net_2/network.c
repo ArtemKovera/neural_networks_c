@@ -21,6 +21,15 @@ void initialize(Layer * layer, int numInputs, int numNeurons)
 
 void computeOutput(Layer * layer, float * inputs, int numInputs, int numNeurons)
 {
-    
+     for (int j = 0; j < numNeurons; j++) 
+     {
+        float sum = 0.0;
+        for (int i = 0; i < numInputs; i++) 
+        {
+            sum += inputs[i] * layer->weights[i * numNeurons + j];
+        }
+
+        layer->outputs[j] = sigmoid(sum + layer->biases[j]);
+    }   
 }
 
