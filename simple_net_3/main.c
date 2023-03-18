@@ -1,6 +1,6 @@
 #include"net3.h"
 
-#define LEARNING_RATE 0.1 
+#define LEARNING_RATE 0.001 
 #define GRADIENT_DESCENT_ITERATIONS 20
 #define WEIGHT_INITIALIZATION 1.0
 #define BIAS_INITIALIZATION 1.0
@@ -24,6 +24,10 @@ int main(void)
     
 
     printf("Loss function before training L = %f\n", compute_loss_function(&net, trainingSet, SAMPLES));
+
+    printf("Derivative with respect to weight before training = %f \n", compute_derivative_dl_dw1(&net, trainingSet, SAMPLES));
+    printf("Derivative with respect to bias before training = %f \n", compute_derivative_dl_dw0(&net, trainingSet, SAMPLES));
+
 
     return 0;
 }

@@ -5,7 +5,7 @@ double direct_path(const Neuron * net, const double x)
     return x * net->weight + net->bias;
 }
 
-double compute_loss_function (Neuron * net, double training_set[][2], int number_of_samples)
+double compute_loss_function (const Neuron * net, double training_set[][2], int number_of_samples)
 {
     int i = 0;
     double sum;
@@ -19,9 +19,30 @@ double compute_loss_function (Neuron * net, double training_set[][2], int number
     return sum;
 }
 
-/*
-double compute_derivative_dl_dw1 (Neuron * net, double training_set[][2], int number_of_samples)
+double compute_derivative_dl_dw1 ( const Neuron * net, double training_set [][2], int number_of_samples )
 {
-
+    int i = 0;;
+    double sum = 0;
+    
+    while(i < number_of_samples)
+    {
+        sum += (2 * training_set[i][0] * (direct_path(net, training_set[i][0]) - training_set[i][1]));
+        i++;
+    }
+    
+    return sum;
 }
-*/
+
+double compute_derivative_dl_dw0 ( const Neuron * net, double training_set [][2], int number_of_samples )
+{
+    int i = 0;;
+    double sum = 0;
+    
+    while(i < number_of_samples)
+    {
+        sum += (2 * (direct_path(net, training_set[i][0]) - training_set[i][1]));
+        i++;
+    }
+
+    return sum;
+}
