@@ -1,3 +1,5 @@
+#ifndef NET3_H
+#define NET3_H
 #include<math.h>
 #include<stdio.h>
 
@@ -21,8 +23,4 @@ void gradient_descent_once (Neuron * net, double training_set[][2], int number_o
 
 void train_network (Neuron * net, double training_set[][2], int number_of_samples, double learning_rate, int gradient_descent_iterations);
 
-
-
-
-
-
+#endif

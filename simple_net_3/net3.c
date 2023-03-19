@@ -46,3 +46,9 @@ double compute_derivative_dl_dw0 ( const Neuron * net, double training_set [][2]
 
     return sum;
 }
+
+void gradient_descent_once (Neuron * net, double training_set[][2], int number_of_samples, double learning_rate)
+{
+    net->weight -= compute_derivative_dl_dw1(net, training_set, number_of_samples) * learning_rate;
+    net->bias   -= compute_derivative_dl_dw0(net, training_set, number_of_samples) * learning_rate;    
+}
