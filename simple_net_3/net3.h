@@ -1,7 +1,6 @@
 #ifndef NET3_H
 #define NET3_H
 #include<math.h>
-#include<stdio.h>
 
 typedef struct
 {

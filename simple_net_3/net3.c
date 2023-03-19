@@ -52,3 +52,15 @@ void gradient_descent_once (Neuron * net, double training_set[][2], int number_o
     net->weight -= compute_derivative_dl_dw1(net, training_set, number_of_samples) * learning_rate;
     net->bias   -= compute_derivative_dl_dw0(net, training_set, number_of_samples) * learning_rate;    
 }
+
+void train_network (Neuron * net, double training_set[][2], int number_of_samples, double learning_rate, int gradient_descent_iterations)
+{
+    int i = 0;
+
+    while(i < gradient_descent_iterations)
+    {
+        compute_loss_function(net, training_set, number_of_samples);
+        gradient_descent_once(net, training_set, number_of_samples, learning_rate);
+        i++;
+    }    
+}
