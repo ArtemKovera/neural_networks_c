@@ -8,7 +8,7 @@ double direct_path(const Neuron * net, const double x)
 double compute_loss_function (const Neuron * net, double training_set[][2], int number_of_samples)
 {
     int i = 0;
-    double sum;
+    double sum = 0;
 
     while(i < number_of_samples)
     {
