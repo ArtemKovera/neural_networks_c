@@ -16,4 +16,18 @@ double direct_path(const Network * net, const double x1, const double x2)
     return RELU(i3); 
 }
 
+double compute_loss_function (const Network * net, double training_set[][3], int number_of_samples)
+{
+    int i = 0;
+    double sum = 0;
+
+    while(i < number_of_samples)
+    {
+        sum += pow((direct_path(net, training_set[i][0], training_set[i][1]) - training_set[i][2]), 2);
+        i++;
+    }
+
+    return sum;
+}
+
 

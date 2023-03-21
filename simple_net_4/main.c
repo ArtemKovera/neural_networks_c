@@ -34,7 +34,7 @@ int main(void)
         i++;
     } 
 
-           
+    printf("Loss function before training L = %f\n", compute_loss_function(&net, trainingSet, SAMPLES));      
 
     return 0;
 }
