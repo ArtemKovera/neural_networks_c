@@ -21,9 +21,26 @@ typedef struct
 
 #define RELU_DERIV(INPUT) (INPUT>0) ? 1.0 : 0
 
+inline static double relu(const double input)
+{
+    if(input > 0)
+        return input;
+    
+    return 0;
+}
+
+inline static double relu_der(const double input)
+{
+    if(input > 0)
+        return 1.0;
+
+    return 0;
+}
+
 double direct_path(const Network * net, const double x1, const double x2);
 
 double compute_loss_function(const Network * net, double training_set[][3], int number_of_samples);
+
 
 
 #endif
