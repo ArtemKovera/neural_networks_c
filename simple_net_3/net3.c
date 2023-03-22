@@ -59,7 +59,7 @@ void train_network (Neuron * net, double training_set[][2], int number_of_sample
 
     while(i < gradient_descent_iterations)
     {
-        compute_loss_function(net, training_set, number_of_samples);
+        //compute_loss_function(net, training_set, number_of_samples);
         gradient_descent_once(net, training_set, number_of_samples, learning_rate);
         i++;
     }    
