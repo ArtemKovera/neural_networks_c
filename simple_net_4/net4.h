@@ -41,6 +41,8 @@ double direct_path(const Network * net, const double x1, const double x2);
 
 double compute_loss_function(const Network * net, double training_set[][3], int number_of_samples);
 
+void gradient_descent_once (Network * net, double training_set[][3], int number_of_samples, double learning_rate);
 
+void train_network (Network * net, double training_set[][3], int number_of_samples, double learning_rate, int gradient_descent_iterations);
 
 #endif
